@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.png" />
+    <script src="http://unpkg.com/tone"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="title" id="title">
+        <img src="/assets/title/title-text.png" class="title__text" id="title-text" />
+        <img src="/assets/title/title-bg.png" class="title__bg" id="title-bg" />
+      </div>
+      <button class="start-button" id="start-button">START</button>
+      <div class="main" id="main">
+        <div></div>
+        <h1>SHOW YOUR HANDS TO THE CAMERA</h1>
+        <div class="main__app">
+          <div class="left-instruments">
+            <img
+              src="/assets/instruments/piano.png"
+              class="left-piano left-instrument"
+              id="left-piano"
+            />
+            <img
+              src="/assets/instruments/guitar.png"
+              class="left-guitar left-instrument"
+              id="left-guitar"
+            />
+            <img
+              src="/assets/instruments/drum.png"
+              class="left-drum left-instrument"
+              id="left-drum"
+            />
+            <img
+              src="/assets/instruments/kalimba.png"
+              class="left-kalimba left-instrument"
+              id="left-kalimba"
+            />
+          </div>
+          <div>
+            <h2>HIGHER</h2>
+            <canvas class="canvas__output" id="canvas-output"></canvas>
+            <h2>LOWER</h2>
+          </div>
+          <div class="right-instruments">
+            <img
+              src="/assets/instruments/piano.png"
+              class="right-piano right-instrument"
+              id="right-piano"
+            />
+            <img
+              src="/assets/instruments/guitar.png"
+              class="right-guitar right-instrument"
+              id="right-guitar"
+            />
+            <img
+              src="/assets/instruments/drum.png"
+              class="right-drum right-instrument"
+              id="right-drum"
+            />
+            <img
+              src="/assets/instruments/kalimba.png"
+              class="right-kalimba right-instrument"
+              id="right-kalimba"
+            />
+          </div>
+        </div>
+        <video
+          class="video__input"
+          id="video-input"
+          autoplay
+          playsinline
+          width="1280"
+          height="720"
+        ></video>
+        <div id="notes-container"></div>
+        <!-- <div class="result" id="result">
+          <h2 id="result__left"></h2>
+          <h2 id="result__right"></h2>
+        </div> -->
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

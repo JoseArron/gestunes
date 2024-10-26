@@ -1,0 +1,41 @@
+{
+  "piano": {
+    "urls": {
+      "C4": "C4.mp3",
+      "D#4": "Ds4.mp3",
+      "F#4": "Fs4.mp3",
+      "A4": "A4.mp3"
+    },
+    "baseUrl": "https://tonejs.github.io/audio/salamander/"
+  },
+
+  "drum": {
+    "urls": {
+      "C4": "kick.mp3",
+      "D#4": "snare.mp3",
+      "F#4": "hihat.mp3",
+      "A4": "tom1.mp3"
+    },
+    "baseUrl": "https://tonejs.github.io/audio/drum-samples/Bongos/"
+  },
+
+  "guitar": {
+    "urls": {
+      "C4": "guitar_Astring.mp3",
+      "D#4": "guitar_Bstring.mp3",
+      "F#4": "guitar_Gstring.mp3",
+      "A4": "guitar_Dstring.mp3"
+    },
+    "baseUrl": "https://tonejs.github.io/audio/berklee/"
+  },
+
+  "kalimba": {
+    "urls": {
+      "C4": "Kalimba_1.mp3",
+      "D#4": "Kalimba_2.mp3",
+      "F#4": "Kalimba_3.mp3",
+      "A4": "Kalimba_1.mp3"
+    },
+    "baseUrl": "https://tonejs.github.io/audio/berklee/"
+  }
+}
