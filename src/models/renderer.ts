@@ -85,8 +85,6 @@ export default class Renderer {
           radius: 6,
         });
       }
-    } else {
-      console.warn('No landmarks detected.');
     }
 
     this.canvasContext.restore();
