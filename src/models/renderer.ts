@@ -33,7 +33,6 @@ export default class Renderer {
       this.props.initialize();
       this.startButton!.style.display = 'none';
       this.mainElement!.style.display = 'block';
-      console.log('Start button clicked');
     });
   }
 
@@ -52,7 +51,7 @@ export default class Renderer {
       if (this.video === null) {
         return;
       }
-      console.log('Webcam loaded');
+
       this.video.play();
       this.props.startLoop();
     });
@@ -97,9 +96,7 @@ export default class Renderer {
     const animInstrument = document.getElementById(
       (hand === 'left' ? 'left-' : 'right-') + instrumentName
     );
-    const random = getRandomRangeInt(0, 1);
-    if (random === 0) animInstrument?.classList.toggle('playing-1');
-    if (random === 1) animInstrument?.classList.toggle('playing-2');
+    animInstrument?.classList.toggle(`playing-${getRandomRangeInt(1, 2)}`);
   }
 
   animateNote(instrumentName: string, hand: string) {
@@ -110,18 +107,17 @@ export default class Renderer {
       (hand === 'left' ? 'left-' : 'right-') + instrumentName
     );
 
+    if (!animInstrument) {
+      return;
+    }
+
     note.src = `/assets/notes/${getRandomRangeInt(1, 6)}.png`;
     note.classList.add('floating-note');
 
     note.style.position = 'absolute';
 
-    // console.log(animInstrument, animInstrument?.style);
-
-    // note.style.left = animInstrument?.style.left;
-    // note.style.bottom = animInstrument?.style.bottom;
-
-    // console.log(note.style.left, note.style.bottom);
-    // note.style.transform = `translateX(${getRandomRangeInt(-10, 10)}%)`;
+    note.style.left = `${animInstrument.getBoundingClientRect().x + getRandomRangeInt(50, 100)}px`;
+    note.style.bottom = `${animInstrument.getBoundingClientRect().y - getRandomRangeInt(250, 300)}px`;
 
     container?.appendChild(note);
 

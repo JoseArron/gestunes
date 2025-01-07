@@ -40,15 +40,14 @@ export default class HandDetector {
   }
 
   loopDetection() {
-    let lastVideoTime = -1;
     const process = (): void => {
       const nowInMs = Date.now();
-      if (this.renderer.video?.currentTime !== lastVideoTime) {
+      if (this.gestureRecognizer && this.renderer.video) {
         const gestureRecognitionResult = this.gestureRecognizer!.recognizeForVideo(
           this.renderer.video!,
           nowInMs
         );
-        // console.log(gestureRecognitionResult);
+
         this.renderer.drawLandmarks(gestureRecognitionResult!.landmarks);
         let rightHandDetected: boolean = false;
         let leftHandDetected: boolean = false;
